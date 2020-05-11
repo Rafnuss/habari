@@ -27,7 +27,7 @@ h1, h1, h3, h4 {
     top:52px;
 }
 #fp-nav{
-    top:80px;
+    top:140px;
 }
 .fp-slidesNav {
     text-align: center;
@@ -66,19 +66,12 @@ h1, h1, h3, h4 {
 .caption{
     width: 33vw;
     min-width: 200px;
-    margin: 70px;
+    margin: 66px;
     padding: 12px 40px;
     position: absolute;
     overflow-y: auto;
     max-height: 33vh;
-}
-.light{
     background: rgba(255, 255, 255, 1);
-    color: #000;
-}
-.dark {
-    color: #fff;
-    background: rgba(0, 0, 0, 1);
 }
 .right{
     margin-left: auto;
@@ -88,7 +81,7 @@ h1, h1, h3, h4 {
 .left{
     margin-right: auto;
     margin-left: 0;
-    padding-left: 70px;
+    padding-left: 50px;
 }
 .bottom{
     bottom:0;

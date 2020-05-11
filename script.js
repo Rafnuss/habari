@@ -16,7 +16,7 @@ function addBackground(s){
         }
         var inner  = "<img class='img-bkg' src='./assets/20/"+s.background.replace(/ /g,"-")+"' data-src='"+imgroot+s.background.replace(/ /g,"-")+"'></img>";
     } else if ( s.background.includes('mp4') ){
-        var inner  = '<video class="video-bkg" loop="" muted="" data-poster="./assets/loading.gif" preload="auto" data-autoplay="">\
+        var inner  = '<video class="video-bkg" loop="" data-poster="./assets/loading.gif" preload="auto" data-autoplay="">\
             <source data-src="./assets/video/'+ s.background.replace(/ /g,"-") +'" type="video/mp4" />\
         </video>'
     }
@@ -32,14 +32,16 @@ sections.forEach((s) => {
             var slide = document.createElement('div');
             slide.classList.add("slide");
             if ("background_color" in sl) slide.style['background-color'] =  sl.background_color;
-            if ("background" in sl) slide.innerHTML = addBackground(sl)
             if ("content" in sl) slide.innerHTML += sl.content;
+            if ("background" in sl) slide.innerHTML += addBackground(sl)
+            
             section.appendChild(slide);
         })
     } else {
         if ("background_color" in s) section.style['background-color'] =  s.background_color;
-        if ("background" in s) section.innerHTML = addBackground(s)
         if ("content" in s) section.innerHTML += s.content;
+        if ("background" in s) section.innerHTML += addBackground(s)
+        
     }
     
     fp.appendChild(section);
@@ -73,7 +75,7 @@ new fullpage('#fullpage', {
 var a = new LazyLoad({
     thresholds: "100% 100%"
 });
-
+/*
 mapboxgl.accessToken = 'pk.eyJ1IjoicmFmbnVzcyIsImEiOiIzMVE1dnc0In0.3FNMKIlQ_afYktqki-6m0g';
 var map = new mapboxgl.Map({
     container: 'map',
@@ -92,5 +94,7 @@ document.querySelectorAll('.map-link').forEach(function(button) {
 
 });
 
+.hide("slide", { direction: "left" }, 1000);
 
+*/
 
