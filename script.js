@@ -31,17 +31,15 @@ sections.forEach((s) => {
         s.slides.forEach((sl) => {
             var slide = document.createElement('div');
             slide.classList.add("slide");
-            if ("background_color" in sl) slide.style['background-color'] =  sl.background_color;
-            if ("content" in sl) slide.innerHTML += sl.content;
+            //if ("background_color" in sl) slide.style['background-color'] =  sl.background_color;
+            if ("map" in sl) slide.innerHTML += "<div id='map'></div><div id='map-next'><i class='fas fa-lg fa-chevron-down'></i></div>"
+            if ("caption" in sl) {
+                slide.innerHTML += '<div class="caption"><i class="fas fa-lg caption-toggle fa-chevron-left"></i><div class="caption-content">'+sl.caption+'</div></div>';
+            }
             if ("background" in sl) slide.innerHTML += addBackground(sl)
             
             section.appendChild(slide);
         })
-    } else {
-        if ("background_color" in s) section.style['background-color'] =  s.background_color;
-        if ("content" in s) section.innerHTML += s.content;
-        if ("background" in s) section.innerHTML += addBackground(s)
-        
     }
     
     fp.appendChild(section);
@@ -75,26 +73,38 @@ new fullpage('#fullpage', {
 var a = new LazyLoad({
     thresholds: "100% 100%"
 });
-/*
+
 mapboxgl.accessToken = 'pk.eyJ1IjoicmFmbnVzcyIsImEiOiIzMVE1dnc0In0.3FNMKIlQ_afYktqki-6m0g';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/rafnuss/ck9kv605a07di1io13vgq4cos',
-    center: [0,0],
-    zoom: 1,
+    style: 'mapbox://styles/rafnuss/ck9kv605a07di1io13vgq4cos/draft',
+    center: [39.988848,-3.378173],
+    zoom: 3.5,
     bearing: 0,
     pitch: 0,
     scrollZoom: false,
 });
 map.addControl(new mapboxgl.NavigationControl());
+map.setLayoutProperty('kenya-2020','symbol-sort-key','order');
 
-//map.scrollZoom.enable();
+map.scrollZoom.enable();
 
-document.querySelectorAll('.map-link').forEach(function(button) {
-
+$('.caption-toggle').on('click', function(e) {
+    console.log(e)
+    if (e.target.classList.contains('fa-chevron-left')){
+        $('.caption-content').hide("slide", { direction: "left" }, 1000);
+        $('.caption-toggle').addClass('fa-chevron-right').removeClass('fa-chevron-left')
+    } else {
+        $('.caption-toggle').addClass('fa-chevron-left').removeClass('fa-chevron-right')
+        $('.caption-content').show("slide", { direction: "left" }, 1000);
+    }
+    
 });
 
-.hide("slide", { direction: "left" }, 1000);
+$('#map-next').on('click',function(){
+    fullpage_api.moveSectionDown();
+})
 
-*/
+
+
 
