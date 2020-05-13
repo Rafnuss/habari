@@ -85,7 +85,6 @@ var map = new mapboxgl.Map({
     scrollZoom: false,
 });
 map.addControl(new mapboxgl.NavigationControl());
-map.setLayoutProperty('kenya-2020','symbol-sort-key','order');
 
 map.scrollZoom.enable();
 
@@ -105,6 +104,13 @@ $('#map-next').on('click',function(){
     fullpage_api.moveSectionDown();
 })
 
+window.onload=function(){
+    var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+    if (mobile) {
+        alert("Pour une meilleure expérience, visite le site depuis ton ordi.");              
+    } else {
 
+    }
+  }
 
 
