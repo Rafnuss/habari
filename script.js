@@ -77,7 +77,7 @@ var a = new LazyLoad({
 mapboxgl.accessToken = 'pk.eyJ1IjoicmFmbnVzcyIsImEiOiIzMVE1dnc0In0.3FNMKIlQ_afYktqki-6m0g';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/rafnuss/ck9kv605a07di1io13vgq4cos/draft',
+    style: 'mapbox://styles/rafnuss/ck9kv605a07di1io13vgq4cos',
     center: [39.988848,-3.378173],
     zoom: 3.5,
     bearing: 0,

@@ -7,7 +7,7 @@ sections=[
             <p>Habari ? Quelles sont les nouvelles ? Un mot essentiel pour aborder les gens par ici ! Nussbaumer étant trop alsacien pour les Kenyans, on a été renommé Nusu-Mbao, demi-planche de bois, lors de notre première visite, et c\'est ainsi qu\'on est connu ici.</p>\
             <p>Voici donc quelques nouvelles du Kenya à travers ce panorama de photos et vidéos. Les différents chapitres défilent verticalement, avec pour chaque chapitre plusieurs photos, de droite à gauche. </p>\
             <p><b>Petit jeu:</b> ce petit oiseau se cache dans une photo dans chaque section - à vous de le trouver ! </p>\
-            <img src="https://zoziologie.raphaelnussbaumer.com/assets/images/logo.png" id="logo-bird">'   
+            <img src="/assets/logo.png" id="logo-bird">'   
         }, {
             map:true,
             caption:' <p>Pour ceux qui aiment visualiser les choses, voici une carte avec les différents lieux mentionnés ci-dessous (zoomez pour les voir).</p>'
